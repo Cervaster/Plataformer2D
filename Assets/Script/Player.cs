@@ -5,9 +5,10 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float inputH;
+    private Animator anim;
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private float fuerzaSalto;
-    private Animator anim;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -1,7 +1,9 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Video;
 
-public class Slime : MonoBehaviour
+public class Slime : Enemy
 {
     [SerializeField] private Transform[] puntos;
     [SerializeField] private float velocidadPatrulla;
@@ -11,6 +13,7 @@ public class Slime : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Vidas = 50;
         destinoActual = puntos[indiceActual].position;
         StartCoroutine(Patrulla());
     }
@@ -42,10 +45,10 @@ public class Slime : MonoBehaviour
             indiceActual = 0;
         }
         destinoActual = puntos[indiceActual].position;
-        enFocarDestino();
+        EnFocarDestino();
 
     }
-    private void enFocarDestino()
+    private void EnFocarDestino()
     {
         if (destinoActual.x > transform.position.x)
         {
