@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class Slime : Enemy
+public class Slime : MonoBehaviour
 {
     [SerializeField] private Transform[] puntos;
     [SerializeField] private float velocidadPatrulla;
@@ -13,7 +13,6 @@ public class Slime : Enemy
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Vidas = 50;
         destinoActual = puntos[indiceActual].position;
         StartCoroutine(Patrulla());
     }
@@ -59,5 +58,18 @@ public class Slime : Enemy
             transform.localScale = new Vector3(-1,1,1); 
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D elOtro)
+    {
+        if (elOtro.CompareTag("DeteccionPlayer"))
+        {
+           Debug.Log("Detecte al jugador");
+        }
+        else if (elOtro.CompareTag("PlayerHitBox"))
+        {
+            Debug.Log("Atravece al jugador");
+           
+        }
     }
 }
