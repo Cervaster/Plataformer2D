@@ -11483,7 +11483,7 @@ GameObject:
   - component: {fileID: 536460784}
   - component: {fileID: 536460783}
   - component: {fileID: 536460785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collisiones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20451,7 +20451,7 @@ CompositeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -21268,6 +21268,7 @@ Transform:
   m_Children:
   - {fileID: 127502376}
   - {fileID: 383178751}
+  - {fileID: 1105122950}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &844903940
@@ -21348,6 +21349,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadMovimiento: 5
   fuerzaSalto: 30
+  pies: {fileID: 1105122950}
+  distanciaSuelo: 0.15
+  queEsSaltable:
+    serializedVersion: 2
+    m_Bits: 256
   puntoAtaque: {fileID: 383178751}
   radioAtaque: 1
   danhoAtaque: 20
@@ -21778,6 +21784,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidas: 40
+--- !u!1 &1105122949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1105122950}
+  m_Layer: 6
+  m_Name: Pies
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1105122950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105122949}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.04, y: -0.979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 844903939}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1131334676
 GameObject:
   m_ObjectHideFlags: 0

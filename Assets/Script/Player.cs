@@ -6,8 +6,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private float inputH;
     private Animator anim;
+    [Header("Sistema de movimiento")]
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private float fuerzaSalto;
+    [SerializeField] private Transform pies;
+    [SerializeField] private float distanciaSuelo;
+    [SerializeField] private LayerMask queEsSaltable;
+
 
     [Header("Sistema de combate")]
     [SerializeField] private Transform puntoAtaque;
@@ -54,11 +59,16 @@ public class Player : MonoBehaviour
 
     private void Saltar()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && EstoyEnSuelo())
         {
             rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
             anim.SetTrigger("jump");
         }
+    }
+
+    private bool EstoyEnSuelo()
+    {
+        return Physics2D.Raycast(pies.position, Vector3.down, distanciaSuelo, queEsSaltable); ;
     }
 
     private void Movimiento()
