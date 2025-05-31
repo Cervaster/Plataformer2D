@@ -5,6 +5,7 @@ public class Murcielago : MonoBehaviour
 {
     [SerializeField] private Transform[] puntos;
     [SerializeField] private float velocidadPatrulla;
+    [SerializeField] private float danhoAtaque;
     private Vector3 destinoActual;
     private int indiceActual = 0;
 
@@ -30,7 +31,6 @@ public class Murcielago : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, destinoActual, velocidadPatrulla * Time.deltaTime);
                 yield return null;
             }
-            Debug.Log("llego");
             DefinirNuevoDestino();
         }
     }
@@ -65,8 +65,8 @@ public class Murcielago : MonoBehaviour
         }
         else if (elOtro.CompareTag("PlayerHitBox"))
         {
-            Debug.Log("Atravece al jugador");
-
+            SistemaVidas sistemasvidas = elOtro.gameObject.GetComponent<SistemaVidas>();
+            sistemasvidas.RecibirDanho(20);
         }
     }
 }

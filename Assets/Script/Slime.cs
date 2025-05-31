@@ -7,6 +7,7 @@ public class Slime : MonoBehaviour
 {
     [SerializeField] private Transform[] puntos;
     [SerializeField] private float velocidadPatrulla;
+    [SerializeField] private float danhoAtaque;
     private Vector3 destinoActual;
     private int indiceActual = 0;
 
@@ -68,8 +69,8 @@ public class Slime : MonoBehaviour
         }
         else if (elOtro.CompareTag("PlayerHitBox"))
         {
-            Debug.Log("Atravece al jugador");
-           
+            SistemaVidas sistemasvidas = elOtro.gameObject.GetComponent<SistemaVidas>();
+            sistemasvidas.RecibirDanho(20);
         }
     }
 }

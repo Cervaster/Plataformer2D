@@ -8,7 +8,13 @@ public class Player : MonoBehaviour
     private Animator anim;
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private float fuerzaSalto;
-    
+
+    [Header("Sistema de combate")]
+    [SerializeField] private Transform puntoAtaque;
+    [SerializeField] private float radioAtaque;
+    [SerializeField] private float danhoAtaque;    
+    [SerializeField] private LayerMask queEsDanhable;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,15 +30,25 @@ public class Player : MonoBehaviour
 
         Saltar();
 
-        Atacar();
+        LanzarAtaque();
 
     }
 
-    private void Atacar()
+    private void LanzarAtaque()
     {
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetTrigger("attack");
+        }
+    }
+    //se ejecuta desde evento de animacion
+    private void Ataque()
+    {
+        Collider2D[] collidersTocados = Physics2D.OverlapCircleAll(puntoAtaque.position, radioAtaque, queEsDanhable);
+        foreach (Collider2D item in collidersTocados)
+        {
+            SistemaVidas sistemaVidas = item.gameObject.GetComponent<SistemaVidas>();
+            sistemaVidas.RecibirDanho(danhoAtaque);
         }
     }
 
@@ -66,5 +82,11 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("running", false);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(puntoAtaque.position, radioAtaque);
     }
 }
