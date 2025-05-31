@@ -33,7 +33,6 @@ public class Slime : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, destinoActual, velocidadPatrulla * Time.deltaTime);
                 yield return null;
             }
-            Debug.Log("llego");
             DefinirNuevoDestino();
         }
     }

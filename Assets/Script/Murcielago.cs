@@ -6,6 +6,7 @@ public class Murcielago : MonoBehaviour
     [SerializeField] private Transform[] puntos;
     [SerializeField] private float velocidadPatrulla;
     [SerializeField] private float danhoAtaque;
+    [SerializeField] private Transform jugador;
     private Vector3 destinoActual;
     private int indiceActual = 0;
 
@@ -61,7 +62,8 @@ public class Murcielago : MonoBehaviour
     {
         if (elOtro.CompareTag("DeteccionPlayer"))
         {
-            Debug.Log("Detecte al jugador");
+            Debug.Log("Jugador detectado");
+
         }
         else if (elOtro.CompareTag("PlayerHitBox"))
         {

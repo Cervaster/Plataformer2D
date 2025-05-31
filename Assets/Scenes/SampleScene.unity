@@ -21647,6 +21647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 2019749508781618461, guid: 70022550fe54cc84cab9755756875246, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7710238625260736269, guid: 70022550fe54cc84cab9755756875246, type: 3}
       propertyPath: 'puntos.Array.data[0]'
       value: 
@@ -21712,6 +21716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Murcielago
       objectReference: {fileID: 0}
+    - target: {fileID: 4876446045701202461, guid: 9c1bf3d361af7be4eb2b90d03dbfbcc9, type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 844903939}
     - target: {fileID: 4876446045701202461, guid: 9c1bf3d361af7be4eb2b90d03dbfbcc9, type: 3}
       propertyPath: 'puntos.Array.data[0]'
       value: 
@@ -21849,6 +21857,10 @@ PrefabInstance:
     - target: {fileID: 8828431740519958459, guid: 68e55ccec97a7884e8b4786600e45841, type: 3}
       propertyPath: m_Name
       value: Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828431740519958459, guid: 68e55ccec97a7884e8b4786600e45841, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

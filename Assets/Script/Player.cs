@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private float inputH;
     private Animator anim;
+
     [Header("Sistema de movimiento")]
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private float fuerzaSalto;
