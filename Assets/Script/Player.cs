@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float danhoAtaque;
     [SerializeField] private LayerMask queEsDanhable;
 
+    [Header("Sistema de vidas")]
     [SerializeField] private TextMeshProUGUI vidas;
     private SistemaVidas sistemaVidas;
 
@@ -42,8 +43,6 @@ public class Player : MonoBehaviour
         Saltar();
 
         LanzarAtaque();
-
-        Muerte();
 
         vidas.text = sistemaVidas.Vidas.ToString("0"); // Actualiza el texto de vidas en la UI
 
@@ -101,15 +100,6 @@ public class Player : MonoBehaviour
         else
         {
             anim.SetBool("running", false);
-        }
-    }
-
-    private void Muerte()
-    { 
-        if (sistemaVidas.Vidas <= 0)
-        {
-            
-            
         }
     }
 

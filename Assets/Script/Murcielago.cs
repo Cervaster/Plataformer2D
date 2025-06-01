@@ -6,7 +6,6 @@ public class Murcielago : MonoBehaviour
     [SerializeField] private Transform[] puntos;
     [SerializeField] private float velocidadPatrulla;
     [SerializeField] private float danhoAtaque;
-    [SerializeField] private Transform jugador;
     private Vector3 destinoActual;
     private int indiceActual = 0;
 
@@ -60,12 +59,7 @@ public class Murcielago : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D elOtro)
     {
-        if (elOtro.CompareTag("DeteccionPlayer"))
-        {
-            Debug.Log("Jugador detectado");
-
-        }
-        else if (elOtro.CompareTag("PlayerHitBox"))
+        if (elOtro.CompareTag("PlayerHitBox"))
         {
             SistemaVidas sistemasvidas = elOtro.gameObject.GetComponent<SistemaVidas>();
             sistemasvidas.RecibirDanho(20);

@@ -31,6 +31,7 @@ public class BolaFuego : MonoBehaviour
         {
             SistemaVidas sistemasvidas = elOtro.gameObject.GetComponent<SistemaVidas>();
             sistemasvidas.RecibirDanho(20);
+            
             Destroy(this.gameObject);
             Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
         }

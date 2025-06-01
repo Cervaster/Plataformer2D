@@ -1,7 +1,5 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Video;
 
 public class Slime : MonoBehaviour
 {
@@ -62,11 +60,7 @@ public class Slime : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D elOtro)
     {
-        if (elOtro.CompareTag("DeteccionPlayer"))
-        {
-           Debug.Log("Detecte al jugador");
-        }
-        else if (elOtro.CompareTag("PlayerHitBox"))
+    if (elOtro.CompareTag("PlayerHitBox"))
         {
             SistemaVidas sistemasvidas = elOtro.gameObject.GetComponent<SistemaVidas>();
             sistemasvidas.RecibirDanho(20);

@@ -543,6 +543,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2019749508781618461, guid: 70022550fe54cc84cab9755756875246, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7710238625260736269, guid: 70022550fe54cc84cab9755756875246, type: 3}
       propertyPath: puntos.Array.size
       value: 2
@@ -21478,6 +21482,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1258661564888430435, guid: 70022550fe54cc84cab9755756875246, type: 3}
   m_PrefabInstance: {fileID: 5278159065087117029}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1357099569 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4522639094386779450, guid: de4e56d8c3981c54b98359e531778dc7, type: 3}
+  m_PrefabInstance: {fileID: 7905924679606164689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1591080126
 GameObject:
   m_ObjectHideFlags: 0
@@ -21509,6 +21518,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1741935265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1600494700 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8027324081828599929, guid: de4e56d8c3981c54b98359e531778dc7, type: 3}
+  m_PrefabInstance: {fileID: 7905924679606164689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1679403625
 GameObject:
   m_ObjectHideFlags: 0
@@ -22016,6 +22030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 8848943009493830112, guid: 7bcef294a95c2ce4a937e8704124e5cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22076,6 +22094,10 @@ PrefabInstance:
     - target: {fileID: 2019749508781618461, guid: 70022550fe54cc84cab9755756875246, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710238625260736269, guid: 70022550fe54cc84cab9755756875246, type: 3}
+      propertyPath: puntos.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7710238625260736269, guid: 70022550fe54cc84cab9755756875246, type: 3}
       propertyPath: 'puntos.Array.data[0]'
@@ -22142,10 +22164,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Murcielago
       objectReference: {fileID: 0}
+    - target: {fileID: 291741807155200071, guid: 9c1bf3d361af7be4eb2b90d03dbfbcc9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4876446045701202461, guid: 9c1bf3d361af7be4eb2b90d03dbfbcc9, type: 3}
       propertyPath: jugador
       value: 
       objectReference: {fileID: 844903939}
+    - target: {fileID: 4876446045701202461, guid: 9c1bf3d361af7be4eb2b90d03dbfbcc9, type: 3}
+      propertyPath: danhoAtaque
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876446045701202461, guid: 9c1bf3d361af7be4eb2b90d03dbfbcc9, type: 3}
+      propertyPath: puntos.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4876446045701202461, guid: 9c1bf3d361af7be4eb2b90d03dbfbcc9, type: 3}
       propertyPath: 'puntos.Array.data[0]'
       value: 
@@ -22225,6 +22259,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7141651640020739315, guid: de4e56d8c3981c54b98359e531778dc7, type: 3}
+      propertyPath: pies
+      value: 
+      objectReference: {fileID: 1357099569}
+    - target: {fileID: 7141651640020739315, guid: de4e56d8c3981c54b98359e531778dc7, type: 3}
       propertyPath: vidas
       value: 
       objectReference: {fileID: 824644471}
@@ -22236,9 +22274,17 @@ PrefabInstance:
       propertyPath: puntaje
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7141651640020739315, guid: de4e56d8c3981c54b98359e531778dc7, type: 3}
+      propertyPath: puntoAtaque
+      value: 
+      objectReference: {fileID: 1600494700}
     - target: {fileID: 8988609918244772171, guid: de4e56d8c3981c54b98359e531778dc7, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988609918244772171, guid: de4e56d8c3981c54b98359e531778dc7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

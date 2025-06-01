@@ -58,8 +58,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   velocidadPatrulla: 5
-  danhoAtaque: 0
-  jugador: {fileID: 0}
+  danhoAtaque: 20
 --- !u!114 &2018065715234521301
 MonoBehaviour:
   m_ObjectHideFlags: 0
