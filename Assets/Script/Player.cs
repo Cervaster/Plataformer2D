@@ -1,6 +1,8 @@
+using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -26,6 +28,10 @@ public class Player : MonoBehaviour
     [SerializeField] private TextMeshProUGUI vidas;
     private SistemaVidas sistemaVidas;
 
+    [Header("KillZone")]
+    [SerializeField] private GameObject killZone;
+    private bool isPlayerInKillZone = false; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,13 +45,15 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movimiento();
-
         Saltar();
-
         LanzarAtaque();
+        vidas.text = sistemaVidas.Vidas.ToString("0");
 
-        vidas.text = sistemaVidas.Vidas.ToString("0"); // Actualiza el texto de vidas en la UI
-
+        if (isPlayerInKillZone)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reinicia la escena
+            isPlayerInKillZone = false; // Evita recargas múltiples
+        }
     }
 
     private void LanzarAtaque()
@@ -100,6 +108,14 @@ public class Player : MonoBehaviour
         else
         {
             anim.SetBool("running", false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D elOtro)
+    {
+        if (elOtro.CompareTag("Gorund"))
+        {
+            isPlayerInKillZone = true;
         }
     }
 

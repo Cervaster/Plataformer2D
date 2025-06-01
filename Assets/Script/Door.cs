@@ -1,22 +1,37 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
     private bool isPlayerInDoor = false;
+    [SerializeField] private TextMeshProUGUI mensaje;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        mensaje.gameObject.SetActive(false); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isPlayerInDoor == true)
+        if (SceneManager.GetActiveScene().name == "Level1")
         {
-            SceneManager.LoadScene("Level2"); // Cambia "Nivel2" por el nombre de tu escena de destino
+            if (Input.GetKeyDown(KeyCode.E) && isPlayerInDoor == true)
+            {
+                SceneManager.LoadScene("Level2"); 
+            }
         }
+
+        if (SceneManager.GetActiveScene().name == "Level2")
+        {
+            if (Input.GetKeyDown(KeyCode.E) && isPlayerInDoor == true)
+            {
+                SceneManager.LoadScene("GameOver"); 
+            }
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D elOtro)
@@ -24,11 +39,13 @@ public class Door : MonoBehaviour
         if (elOtro.CompareTag("PlayerHitBox"))
         {
             isPlayerInDoor = true;
-            Debug.Log("Player is in door area. Press E to enter the next level.");
+            mensaje.text = "Presiona E para entrar al siguiente nivel";
+            mensaje.gameObject.SetActive(true);
         }
         else if (elOtro.CompareTag("PlayerHitBox"))
         {
             isPlayerInDoor = false;
+            mensaje.gameObject.SetActive(false);
         }
     }
 }
