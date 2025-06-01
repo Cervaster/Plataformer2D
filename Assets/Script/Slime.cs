@@ -70,6 +70,7 @@ public class Slime : MonoBehaviour
         {
             SistemaVidas sistemasvidas = elOtro.gameObject.GetComponent<SistemaVidas>();
             sistemasvidas.RecibirDanho(20);
+
         }
     }
 }

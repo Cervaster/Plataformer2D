@@ -69,6 +69,7 @@ public class Murcielago : MonoBehaviour
         {
             SistemaVidas sistemasvidas = elOtro.gameObject.GetComponent<SistemaVidas>();
             sistemasvidas.RecibirDanho(20);
+
         }
     }
 }

@@ -59,6 +59,7 @@ MonoBehaviour:
   - {fileID: 0}
   velocidadPatrulla: 5
   danhoAtaque: 0
+  jugador: {fileID: 0}
 --- !u!114 &2018065715234521301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f3e62d40d030740af11ad8214c0680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidas: 40
+  vidas: 20
+  explosion: {fileID: 6942795737675267058, guid: 840aa76d3e82e2946af84ecff33076f1, type: 3}
 --- !u!212 &5627153285282580940
 SpriteRenderer:
   m_ObjectHideFlags: 0

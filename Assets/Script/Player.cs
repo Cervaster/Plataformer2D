@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,15 +19,19 @@ public class Player : MonoBehaviour
     [Header("Sistema de combate")]
     [SerializeField] private Transform puntoAtaque;
     [SerializeField] private float radioAtaque;
-    [SerializeField] private float danhoAtaque;    
+    [SerializeField] private float danhoAtaque;
     [SerializeField] private LayerMask queEsDanhable;
 
+    [SerializeField] private TextMeshProUGUI vidas;
+    private SistemaVidas sistemaVidas;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        sistemaVidas = GetComponent<SistemaVidas>(); // Asignar el componente SistemaVidas
+        
     }
 
     // Update is called once per frame
@@ -37,6 +42,10 @@ public class Player : MonoBehaviour
         Saltar();
 
         LanzarAtaque();
+
+        Muerte();
+
+        vidas.text = sistemaVidas.Vidas.ToString("0"); // Actualiza el texto de vidas en la UI
 
     }
 
@@ -82,7 +91,7 @@ public class Player : MonoBehaviour
             anim.SetBool("running", true);
             if (inputH > 0)//movimiento der
             {
-                transform.eulerAngles = new Vector3(0,0,0);
+                transform.eulerAngles = new Vector3(0, 0, 0);
             }
             else//movimiento izq
             {
@@ -92,6 +101,15 @@ public class Player : MonoBehaviour
         else
         {
             anim.SetBool("running", false);
+        }
+    }
+
+    private void Muerte()
+    { 
+        if (sistemaVidas.Vidas <= 0)
+        {
+            
+            
         }
     }
 

@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 378708079184558176}
   - component: {fileID: 5256649260160506499}
   - component: {fileID: 2645525040323148466}
+  - component: {fileID: 4268757469145068724}
   - component: {fileID: 4208493401613640679}
   - component: {fileID: 5770759804287215668}
   - component: {fileID: 2077994622973887487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,6 +105,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerzaBolaFuego: 8
+  explosionPrefab: {fileID: 6942795737675267058, guid: 840aa76d3e82e2946af84ecff33076f1, type: 3}
+--- !u!114 &4268757469145068724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7768392297230146838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f3e62d40d030740af11ad8214c0680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidas: 10
+  explosion: {fileID: 6942795737675267058, guid: 840aa76d3e82e2946af84ecff33076f1, type: 3}
 --- !u!95 &4208493401613640679
 Animator:
   serializedVersion: 7
@@ -183,7 +199,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

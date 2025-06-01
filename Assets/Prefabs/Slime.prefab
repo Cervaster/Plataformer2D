@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidas: 60
+  explosion: {fileID: 6942795737675267058, guid: 840aa76d3e82e2946af84ecff33076f1, type: 3}
 --- !u!212 &3705249221565091854
 SpriteRenderer:
   m_ObjectHideFlags: 0
