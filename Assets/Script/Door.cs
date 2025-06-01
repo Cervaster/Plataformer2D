@@ -34,6 +34,16 @@ public class Door : MonoBehaviour
         
     }
 
+    public void Entrar()
+    {
+        SceneManager.LoadScene("Level1", LoadSceneMode.Single); 
+    }
+
+    public void Salir()
+    {
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+    }
+
     private void OnTriggerEnter2D(Collider2D elOtro)
     {
         if (elOtro.CompareTag("PlayerHitBox"))

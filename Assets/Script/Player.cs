@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     [Header("Sistema de vidas")]
     [SerializeField] private TextMeshProUGUI vidas;
     private SistemaVidas sistemaVidas;
+    private float vidasIniciales;
 
     [Header("KillZone")]
     [SerializeField] private GameObject killZone;
@@ -48,7 +50,13 @@ public class Player : MonoBehaviour
         Saltar();
         LanzarAtaque();
         vidas.text = sistemaVidas.Vidas.ToString("0");
+        vidasIniciales = sistemaVidas.Vidas;
 
+
+        if (vidasIniciales <= 20)
+        {
+            isPlayerInKillZone = true; 
+        }
         if (isPlayerInKillZone)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reinicia la escena
